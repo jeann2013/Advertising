@@ -8,6 +8,7 @@
        Jean Carlos Nunez
     </author>
     <content src="index.html" />
-    <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" version="1.2.0" />
+    
     <access origin="*" />
+    <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" version="1.2.0" />
 </widget>
