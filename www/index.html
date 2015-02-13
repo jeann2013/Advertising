@@ -22,22 +22,22 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <!--
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        -->
         <title>Hello World</title>
     </head>
     <body onload="onDeviceReady()" >
         <p id="deviceProperties">Loading properties...</p>
 
+        <video id="video" class="video-js vjs-default-skin"   controls preload="none" width="640" height="264"
+        poster="http://video-js.zencoder.com/oceans-clip.png"
+        data-setup="{}">
+        </video>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <!--
-        <script type="text/javascript" src="js/painlessfs.js"></script>
-        -->
+         <script src="js/video.js"></script>
         <script type="text/javascript">
+
             document.addEventListener("offline", mensaje(1), false);
             document.addEventListener("online", mensaje(2), false);
             function mensaje(accion)
@@ -46,6 +46,15 @@
                 if (accion==2){alert('Hay Red');}
             }
             
+
+            function cargarvideo()
+            {
+                var myPlayer = videojs('video');
+                myPlayer.src([{ type: "video/mp4", src: "http://video-js.zencoder.com/oceans-clip.mp4" },
+                { type: "video/webm",src: "http://video-js.zencoder.com/oceans-clip.webm" },]);
+                myPlayer.play();
+            }
+
             function onDeviceReady() 
             {
                 alert('Modelo: '+device.model);
