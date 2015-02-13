@@ -11,10 +11,14 @@
     <body onload="onDeviceReady()" >
         <p id="deviceProperties">Loading properties...</p>
 
+
+
+
         <video id="vd" class="video-js vjs-default-skin"   controls preload="none" width="720" height="464"
         poster="http://video-js.zencoder.com/oceans-clip.png"
         data-setup="{}">
         </video>
+
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -34,9 +38,9 @@
             function cargarvideo()
             {
                 var myPlayer = videojs('vd');
-                //myPlayer.src([{ type: "video/mp4", src: "storage/emulated/0/video.mp4" }]);
-                //myPlayer.src([{ type: "video/mp4", src: "cdvfile://localhost/persistent/video2.mp4" }]);
-                myPlayer.src([{ type: "video/mp4", src: "file:///storage/emulated/0/Advertising/video2.mp4" }]);
+                //myPlayer.src([{ type: "video/mp4", src: "storage/emulated/0/video2.mp4" }]);
+                myPlayer.src([{ type: "video/mp4", src: "cdvfile://localhost/persistent/Advertising/video2.mp4" }]);
+                //myPlayer.src([{ type: "video/mp4", src: "file:///storage/emulated/0/Advertising/video2.mp4" }]);
                 
                 myPlayer.play();
             }
@@ -78,7 +82,7 @@
                 fileURL,
                 function(entry) {
                    alert('Se bajo el archivo.');
-                  cargarvideo();
+                  //cargarvideo();
                 },
                 function(error) {
                     alert('Hubo un peo.');
