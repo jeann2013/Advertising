@@ -29,8 +29,8 @@
         -->
         <title>Hello World</title>
     </head>
-    <body onload="onDeviceReady()" onoffline="mensaje(1)" ononline="mensaje(2)" >
-        <p id="deviceProperties">Loading device properties...</p>
+    <body onload="onDeviceReady()" >
+        <p id="deviceProperties">Loading properties...</p>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -45,36 +45,16 @@
                 if (accion==1){alert('Sin Red');}
                 if (accion==2){alert('Hay Red');}
             }
-            function success(uuid)
+            
+            function onDeviceReady() 
             {
-                alert(uuid);
-                
-                //CREATE A DIRECTORY RECURSIVELY
-                var a = new DirManager(); // Initialize a Folder manager
-                a.create_r('folder_b',Log('created successfully'));
-
+                alert('Modelo: '+device.model);
+                alert('Cordova: '+device.cordova);
+                alert('Plataforma: '+device.platform);
+                alert('Id: '+device.uuid);
+                alert('Version: '+device.version);
+                files();
             }
-            function fail(uuid)
-            {
-                alert('Fallo :--(');
-            }
-        </script>
-        <script type="text/javascript" charset="utf-8">
-
-        
-        function onDeviceReady() {
-       
-
-        alert('Modelo: '+device.model);
-        alert('Cordova: '+device.cordova);
-
-        alert('Plataforma: '+device.platform);
-        alert('Id: '+device.uuid);
-
-        alert('Version: '+device.version);
-        files();
-
-     }
 
     function checkConnection() {
         var networkState = navigator.connection.type;
@@ -103,7 +83,7 @@
                 fileURL,
                 function(entry) {
                    alert('Se bajo el archivo.');
-                   checkConnection();
+                   //checkConnection();
                 },
                 function(error) {
                     alert('Hubo un peo.');
