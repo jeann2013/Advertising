@@ -38,11 +38,12 @@
         <script type="text/javascript" src="js/painlessfs.js"></script>
         -->
         <script type="text/javascript">
-          
-            function mensaje(acccion)
+            document.addEventListener("offline", mensaje(1), false);
+            document.addEventListener("online", mensaje(2), false);
+            function mensaje(accion)
             {            
-                if (acccion==1){alert('Sin Red');}
-                if (acccion==2){alert('Hay Red');}
+                if (accion==1){alert('Sin Red');}
+                if (accion==2){alert('Hay Red');}
             }
             function success(uuid)
             {
