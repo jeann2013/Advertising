@@ -29,7 +29,7 @@
         -->
         <title>Hello World</title>
     </head>
-    <body onload="onDeviceReady()">
+    <body onload="onDeviceReady()" onoffline="mensaje(1)" ononline="mensaje(2)" >
         <p id="deviceProperties">Loading device properties...</p>
 
         <script type="text/javascript" src="cordova.js"></script>
@@ -38,8 +38,7 @@
         <script type="text/javascript" src="js/painlessfs.js"></script>
         -->
         <script type="text/javascript">
-            document.addEventListener("offline",mensaje(1));
-            document.addEventListener("online",mensaje(2));
+          
             function mensaje(acccion)
             {            
                 if (mensaje==1){alert('Sin Red');}
