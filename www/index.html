@@ -51,8 +51,7 @@
             function cargarvideo()
             {
                 var myPlayer = videojs('video');
-                myPlayer.src([{ type: "video/mp4", src: "cdvfile://localhost/persistent/video.mp4" },
-                { type: "video/webm",src: "http://video-js.zencoder.com/oceans-clip.webm" },]);
+                myPlayer.src([{ type: "video/mp4", src: "storage/emulated/0/video.mp4" }]);
                 myPlayer.play();
             }
 
@@ -87,7 +86,7 @@
 
             var fileTransfer = new FileTransfer();
             var uri = encodeURI("http://192.168.1.143/video.mp4");
-            var fileURL ='storage/emulated/0/Advertising/video.mp4';
+            var fileURL ='cdvfile://localhost/persistent/Advertising/video.mp4';
             fileTransfer.download(
                 uri,
                 fileURL,
