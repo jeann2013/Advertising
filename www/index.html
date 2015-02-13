@@ -64,20 +64,9 @@
         </script>
         <script type="text/javascript" charset="utf-8">
 
-        // Wait for device API libraries to load
-        //
-        document.addEventListener("deviceready", onDeviceReady, false);
-
-        // device APIs are available
-        //
+        
         function onDeviceReady() {
-       /* var element = document.getElementById('deviceProperties');
-        element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
-                        'Device Cordova: '  + device.cordova  + '<br />' +
-                        'Device Platform: ' + device.platform + '<br />' +
-                        'Device UUID: '     + device.uuid     + '<br />' +
-                        'Device Version: '  + device.version  + '<br />';
-        }*/
+       
 
         alert('Modelo: '+device.model);
         alert('Cordova: '+device.cordova);
@@ -86,6 +75,34 @@
         alert('Id: '+device.uuid);
 
         alert('Version: '+device.version);
+        files();
+
+     }
+
+     function files(){
+
+            var fileTransfer = new FileTransfer();
+            var uri = encodeURI("http://192.168.1.139/yellowcar/imagenes/2010.jpg");
+            var fileURL ='sdcard/';
+            fileTransfer.download(
+                uri,
+                fileURL,
+                function(entry) {
+                   alert('Se bajo el archivo.');
+                },
+                function(error) {
+                    alert('Hubo un peo.');
+                    console.log("download error source " + error.source);
+                    console.log("download error target " + error.target);
+                    console.log("upload error code" + error.code);
+                },
+                false,
+                {
+                    headers: {
+                        "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+                    }
+                }
+            );
 
      }
         
