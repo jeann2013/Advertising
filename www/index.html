@@ -17,6 +17,7 @@
         <video id="vd" class="video-js vjs-default-skin"   controls preload="none" width="720" height="464"
         poster="http://video-js.zencoder.com/oceans-clip.png"
         data-setup="{}">
+        <source src="cdvfile://localhost/persistent/Advertising/video2.mp4" type='video/mp4' />
         </video>
 
 
@@ -82,7 +83,7 @@
                 fileURL,
                 function(entry) {
                    alert('Se bajo el archivo.');
-                  cargarvideo();
+                  //cargarvideo();
                 },
                 function(error) {
                     alert('Hubo un peo.');
