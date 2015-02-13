@@ -37,5 +37,13 @@
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            window.plugins.uniqueDeviceID.get(success, fail);
+
+            function success(uuid)
+            {
+                alert(uuid);
+            }
+        </script>
     </body>
 </html>

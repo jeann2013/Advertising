@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.advertising.advertising" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Advertising</name>
+    <description>
+        App Visor de Videos
+    </description>
+    <author email="jeancarlosn@bitbugsoluciones.com" href="http://www.bitbugsoluciones.com">
+       Jean Carlos Nunez
+    </author>
+    <content src="index.html" />
+    <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" version="1.2.0" />
+    <access origin="*" />
+</widget>
