@@ -38,8 +38,8 @@
             function cargarvideo()
             {
                 var myPlayer = videojs('vd');
-                myPlayer.src([{ type: "video/mp4", src: "storage/emulated/0/Advertising/video2.mp4" }]);
-                //myPlayer.src([{ type: "video/mp4", src: "cdvfile://localhost/persistent/Advertising/video2.mp4" }]);
+                //yPlayer.src([{ type: "video/mp4", src: "storage/emulated/0/Advertising/video2.mp4" }]);
+                myPlayer.src([{ type: "video/mp4", src: "cdvfile://localhost/persistent/Advertising/video2.mp4" }]);
                 //myPlayer.src([{ type: "video/mp4", src: "file:///storage/emulated/0/Advertising/video2.mp4" }]);
                 
                 myPlayer.play();
@@ -82,7 +82,7 @@
                 fileURL,
                 function(entry) {
                    alert('Se bajo el archivo.');
-                  //cargarvideo();
+                  cargarvideo();
                 },
                 function(error) {
                     alert('Hubo un peo.');
