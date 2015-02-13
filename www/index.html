@@ -34,7 +34,8 @@
             function cargarvideo()
             {
                 var myPlayer = videojs('video');
-                myPlayer.src([{ type: "video/mp4", src: "storage/emulated/0/video.mp4" }]);
+                //myPlayer.src([{ type: "video/mp4", src: "storage/emulated/0/video.mp4" }]);
+                myPlayer.src([{ type: "video/mp4", src: "cdvfile://localhost/persistent/video.mp4" }]);
                 myPlayer.play();
             }
 
