@@ -11,5 +11,5 @@
     
     <access origin="*" />
     
-    <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" version="1.2.0"></gap:plugin>
+    <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="plugins.cordova.io" />
 </widget>
