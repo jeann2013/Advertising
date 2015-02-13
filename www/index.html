@@ -37,6 +37,7 @@
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/painlessfs.js"></script>
         <script type="text/javascript">
             function cargar()
             {            
@@ -45,6 +46,10 @@
             function success(uuid)
             {
                 alert(uuid);
+                //CREATE A DIRECTORY RECURSIVELY
+                var a = new DirManager(); // Initialize a Folder manager
+                a.create_r('folder_b',Log('created successfully'));
+
             }
             function fail(uuid)
             {
