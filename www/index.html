@@ -36,6 +36,7 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
          <script src="js/video.js"></script>
+
         <script type="text/javascript">
 
             document.addEventListener("offline", mensaje(1), false);
@@ -50,7 +51,7 @@
             function cargarvideo()
             {
                 var myPlayer = videojs('video');
-                myPlayer.src([{ type: "video/mp4", src: "http://video-js.zencoder.com/oceans-clip.mp4" },
+                myPlayer.src([{ type: "video/mp4", src: "cdvfile://localhost/persistent/video.mp4" },
                 { type: "video/webm",src: "http://video-js.zencoder.com/oceans-clip.webm" },]);
                 myPlayer.play();
             }
