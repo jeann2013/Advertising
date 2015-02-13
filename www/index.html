@@ -28,24 +28,28 @@
         <title>Hello World</title>
     </head>
     <body onload="cargar();">
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
+        <p id="deviceProperties">Loading device properties...</p>
+        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <!--
         <script type="text/javascript" src="js/painlessfs.js"></script>
+        -->
         <script type="text/javascript">
             function cargar()
             {            
-                window.plugins.uniqueDeviceID.get(success, fail);
+                //window.plugins.uniqueDeviceID.get(success, fail);
+                //CREATE A DIRECTORY RECURSIVELY
+                var a = new DirManager(); // Initialize a Folder manager
+                a.create_r('folder_b',Log('created successfully'));
+
+
+
             }
             function success(uuid)
             {
                 alert(uuid);
+                
                 //CREATE A DIRECTORY RECURSIVELY
                 var a = new DirManager(); // Initialize a Folder manager
                 a.create_r('folder_b',Log('created successfully'));
@@ -56,5 +60,25 @@
                 alert('Fallo :--(');
             }
         </script>
+        <script type="text/javascript" charset="utf-8">
+
+        // Wait for device API libraries to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // device APIs are available
+        //
+        function onDeviceReady() {
+        var element = document.getElementById('deviceProperties');
+        element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
+                        'Device Cordova: '  + device.cordova  + '<br />' +
+                        'Device Platform: ' + device.platform + '<br />' +
+                        'Device UUID: '     + device.uuid     + '<br />' +
+                        'Device Version: '  + device.version  + '<br />';
+        }
+
+
+        </script>
+
     </body>
 </html>
