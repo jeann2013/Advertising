@@ -13,13 +13,17 @@
 
 
 
-
+        <!--
         <video id="vd" class="video-js vjs-default-skin"   controls preload="none" width="720" height="464"
         poster="http://video-js.zencoder.com/oceans-clip.png"
         data-setup="{}">
         <source src="storage/emulated/0/Advertising/video2.mp4" type='video/mp4' />
         </video>
+        -->
 
+        <video width="320" height="240" controls>
+             <source src="cdvfile://localhost/persistent/Advertising/video2.mp4" type="video/mp4">   
+        </video>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -48,11 +52,11 @@
 
             function onDeviceReady() 
             {
-                alert('Modelo: '+device.model);
+                /*alert('Modelo: '+device.model);
                 alert('Cordova: '+device.cordova);
                 alert('Plataforma: '+device.platform);
                 alert('Id: '+device.uuid);
-                alert('Version: '+device.version);
+                alert('Version: '+device.version);*/
                 files();
             }
 
