@@ -17,7 +17,7 @@
         <video id="vd" class="video-js vjs-default-skin"   controls preload="none" width="720" height="464"
         poster="http://video-js.zencoder.com/oceans-clip.png"
         data-setup="{}">
-       
+        <source src="file:///storage/emulated/0/Advertising/video.mp4" type="video/mp4">  
         </video>
 
 <!--
@@ -44,7 +44,7 @@
             {
                 var myPlayer = videojs('vd');
                
-                myPlayer.src("file:///storage/emulated/0/Advertising/video2.mp4");
+                myPlayer.src("file:///storage/emulated/0/Advertising/video.mp4");
                 
                 myPlayer.play();
             }
@@ -79,14 +79,14 @@
      function files(){
 
             var fileTransfer = new FileTransfer();
-            var uri = encodeURI("http://192.168.1.143/video2.mp4");
-            var fileURL ='cdvfile://localhost/persistent/Advertising/video2.mp4';
+            var uri = encodeURI("http://192.168.1.143/video.mp4");
+            var fileURL ='cdvfile://localhost/persistent/Advertising/video.mp4';
             fileTransfer.download(
                 uri,
                 fileURL,
                 function(entry) {
                    alert('Se bajo el archivo.');
-                  cargarvideo();
+                  //cargarvideo();
                 },
                 function(error) {
                     alert('Hubo un peo.');
