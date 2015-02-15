@@ -15,7 +15,7 @@
 
   
         <video id="vd" name="vd" controls width="720" height="464" >
-        	<source src="file:///storage/emulated/0/Advertising/video1.mp4" type="video/mp4">  
+        	<source src="file:///storage/emulated/0/Advertising/video.mp4" type="video/mp4">  
         </video>
 
 <!--
@@ -78,13 +78,13 @@
 
             var fileTransfer = new FileTransfer();
             var uri = encodeURI("http://192.168.1.143/video.mp4");
-            var fileURL ='cdvfile://localhost/persistent/Advertising/video1.mp4';
+            var fileURL ='cdvfile://localhost/persistent/Advertising/video.mp4';
             fileTransfer.download(
                 uri,
                 fileURL,
                 function(entry) {
                    alert('Se bajo el archivo.');
-                   vid.src="file:///storage/emulated/0/Advertising/video.mp4";
+                   vid.src="file:///storage/emulated/0/Advertising/video1.mp4";
                    vid.autoplay = true;
                    vid.load();
                   
