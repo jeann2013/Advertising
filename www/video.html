@@ -3,8 +3,18 @@
 <head>
 	<title></title>
 </head>
-<body>
-  		<video id="vd" autoplay name="vd" controls width="720" height="464" >
+<body onload="accionVideo()">
+
+<script type="text/javascript">
+	function accionVideo(){
+		var vid = document.getElementById("vd"); 
+		vid.src="file:///storage/emulated/0/Advertising/video1.mp4";
+		vid.autoplay = true;
+		vid.load();
+		vid.play();
+    }
+</script>
+  		<video id="vd" name="vd" controls width="320" height="176" >
         	<source src="file:///storage/emulated/0/Advertising/video1.mp4" type="video/mp4">  
         </video>
 </body>
