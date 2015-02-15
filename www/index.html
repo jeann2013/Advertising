@@ -75,6 +75,7 @@
      function files(){
 
      		 var vid = document.getElementById("vd"); 
+
             var fileTransfer = new FileTransfer();
             var uri = encodeURI("http://192.168.1.143/video.mp4");
             var fileURL ='cdvfile://localhost/persistent/Advertising/video1.mp4';
@@ -84,7 +85,7 @@
                 function(entry) {
                    alert('Se bajo el archivo.');
                    vid.src="file:///storage/emulated/0/Advertising/video.mp4";
-                   vd.play(); 
+                   vid.play(); 
                 },
                 function(error) {
                     alert('Hubo un peo.');
