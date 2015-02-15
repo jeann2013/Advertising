@@ -5,34 +5,39 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <title>Hello World</title>
-         <link href="js/video_js/video-js.css" rel="stylesheet" type="text/css">
+        <title>Advertising Client</title>
+         
     </head>
     <body onload="onDeviceReady()" >
-        <p id="deviceProperties">Loading properties...</p>
+        <p id="deviceProperties">Charge properties...</p>
 
 
 
   
-        <video id="vd" class="video-js"   controls preload="none" width="720" height="464"
+        <video id="vd"  preload="none" width="720" height="464"
         poster=""
         data-setup="{}">
-        <source src="file:///storage/emulated/0/Advertising/video.mp4" type="video/mp4">  
+        
         </video>
 
 <!--
         <video width="320" height="240" controls>
+        	<source src="file:///storage/emulated/0/Advertising/video.mp4" type="video/mp4">  
              <source src="file:///storage/emulated/0/Advertising/video2.mp4" type="video/mp4">   
         </video>
 -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script src="js/video_js/video.js"></script>
+       
 
         <script type="text/javascript">
 
             document.addEventListener("offline", mensaje(1), false);
             document.addEventListener("online", mensaje(2), false);
+
+            var vid = document.getElementById("vd"); 
+
+
             function mensaje(accion)
             {            
                 if (accion==1){alert('Sin Red');}
@@ -40,14 +45,7 @@
             }
             
 
-            function cargarvideo()
-            {
-                var myPlayer = videojs('vd');
-               
-                //myPlayer.src("file:///storage/emulated/0/Advertising/video.mp4");
-                
-                myPlayer.play();
-            }
+            
 
             function onDeviceReady() 
             {
@@ -86,7 +84,8 @@
                 fileURL,
                 function(entry) {
                    alert('Se bajo el archivo.');
-                  //cargarvideo();
+                   vid.src="file:///storage/emulated/0/Advertising/video.mp4";
+                   vd.play(); 
                 },
                 function(error) {
                     alert('Hubo un peo.');
