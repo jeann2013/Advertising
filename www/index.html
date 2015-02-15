@@ -91,10 +91,7 @@
             fileTransfer.download(
                 uri,
                 fileURL,
-                function(entry) {
-                   alert('Se bajo el archivo.');
-                   bandera=1;
-                },
+                accionVideo(),
                 function(error) {
                     alert('Hubo un peo.');
                     console.log("download error source " + error.source);
