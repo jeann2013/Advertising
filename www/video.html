@@ -17,8 +17,8 @@
 	var vid = document.getElementById("vd"); 
 	vid.src="file:///storage/emulated/0/Advertising/video1.mp4";
 	//vid.src="http://192.168.1.143/video1.mp4";
-	vid.oncanplay = function() {
-	   this.play();
+	vid.onloadeddata = function() {
+    	this.play();
 	};
 
 
