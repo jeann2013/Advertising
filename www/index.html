@@ -13,6 +13,8 @@
 
 
 
+
+		<button onclick="accionVideo()" type="button">Play</button>
   
         <video id="vd" name="vd" controls width="720" height="464" >
         	<source src="file:///storage/emulated/0/Advertising/video.mp4" type="video/mp4">  
@@ -89,7 +91,7 @@
                 fileURL,
                 function(entry) {
                    alert('Se bajo el archivo.');
-                   accionVideo();
+                   //accionVideo();
                 },
                 function(error) {
                     alert('Hubo un peo.');
