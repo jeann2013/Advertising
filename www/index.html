@@ -15,7 +15,7 @@
 
   
         <video id="vd"  width="720" height="464" >
-        
+        	<source src="file:///storage/emulated/0/Advertising/video1.mp4" type="video/mp4">  
         </video>
 
 <!--
@@ -33,7 +33,7 @@
             document.addEventListener("offline", mensaje(1), false);
             document.addEventListener("online", mensaje(2), false);
 
-            var vid = document.getElementById("vd"); 
+           
 
 
             function mensaje(accion)
@@ -74,9 +74,10 @@
 
      function files(){
 
+     		 var vid = document.getElementById("vd"); 
             var fileTransfer = new FileTransfer();
             var uri = encodeURI("http://192.168.1.143/video.mp4");
-            var fileURL ='cdvfile://localhost/persistent/Advertising/video.mp4';
+            var fileURL ='cdvfile://localhost/persistent/Advertising/video1.mp4';
             fileTransfer.download(
                 uri,
                 fileURL,
