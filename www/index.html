@@ -85,8 +85,9 @@
                 function(entry) {
                    alert('Se bajo el archivo.');
                    vid.src="file:///storage/emulated/0/Advertising/video.mp4";
+                   vid.autoplay = true;
                    vid.load();
-                   vd.play();
+                  
                 },
                 function(error) {
                     alert('Hubo un peo.');
