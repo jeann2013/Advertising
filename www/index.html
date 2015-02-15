@@ -73,11 +73,14 @@
         alert('Connection type: ' + states[networkState]);
     }
 
-
+    function accionVideo(){
+		var vid = document.getElementById("vd"); 
+		vid.src="file:///storage/emulated/0/Advertising/video1.mp4";
+		//vid.autoplay = true;
+		//vid.load();
+		vid.play();
+    }
      function files(){
-
-     		 var vid = document.getElementById("vd"); 
-
             var fileTransfer = new FileTransfer();
             var uri = encodeURI("http://192.168.1.143/video1.mp4");
             var fileURL ='cdvfile://localhost/persistent/Advertising/video1.mp4';
@@ -85,12 +88,8 @@
                 uri,
                 fileURL,
                 function(entry) {
-                   //alert('Se bajo el archivo.');
-                   vid.src="file:///storage/emulated/0/Advertising/video1.mp4";
-                   vid.autoplay = true;
-                   vid.load();
-                   vd.play();
-                  
+                   alert('Se bajo el archivo.');
+                   accionVideo();
                 },
                 function(error) {
                     alert('Hubo un peo.');
@@ -105,6 +104,8 @@
                     }
                 }
             );
+
+
 
      }
         
