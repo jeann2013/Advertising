@@ -7,19 +7,28 @@
 
 
   		<video id="vd" name="vd" controls width="320" height="176" >
-        	<source src="file:///storage/emulated/0/Advertising/video1.mp4" type="video/mp4">  
+        	<source src="http://192.168.1.143/video1.mp4" type="video/mp4">  
         </video>
 </body>
-
+<script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
-	//document.addEventListener("onload", accionVideo(), false);
-	//document.getElementById("vd").addEventListener("oncanplay", accionVideo,true);
+	//document.addEventListener("load", accionVideo, false);
+	//document.getElementById("vd").addEventListener("oncanplay", accionVideo,false);
 	var vid = document.getElementById("vd"); 
 	vid.src="file:///storage/emulated/0/Advertising/video1.mp4";
+	//vid.src="http://192.168.1.143/video1.mp4";
 	vid.oncanplay = function() {
-	   vid.play();
+	   this.play();
 	};
+
+
 	
+    
+
+
+	//$('#vd').play();
+	
+
 	function accionVideo(){
 		var vid = document.getElementById("vd"); 
 		vid.src="http://192.168.1.143/video1.mp4";
