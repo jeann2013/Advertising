@@ -88,7 +88,10 @@
 		vid.src="file:///sdcard/Advertising/video1.mp4";
 		vid.autoplay = true;
 		vid.load();
-		vid.play();
+		vid.onloadstart = function() {
+		//alert('dale mijo');
+    	this.play();
+		};
     }
      function files(){
             var fileTransfer = new FileTransfer();
