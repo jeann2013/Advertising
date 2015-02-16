@@ -14,7 +14,7 @@
 
 
 
-		<button onclick="accionVideo()" id="btn1" name="btn1" type="button">Play</button>
+		<button onclick="closeWindow()" id="btn1" name="btn1" type="button">Salir</button>
 		<br>
 		<br>
 		<br>
@@ -52,7 +52,10 @@
             }
             
 
-            
+            function closeWindow() 
+		    {
+		        navigator.app.exitApp();
+		    }
 
             function onDeviceReady() 
             {
