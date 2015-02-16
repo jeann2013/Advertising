@@ -18,17 +18,12 @@
 		<br>
 		<br>
 		<br>
-  		<a href="video.html">Video</a>
-        <video id="vd" autoplay name="vd" controls width="720" height="464" >
+  		
+        <video id="vd" name="vd" controls width="720" height="464" >
         	<source src="file:///storage/emulated/0/Advertising/video.mp4" type="video/mp4">  
         </video>
 
-<!--
-        <video width="320" height="240" controls>
-        	<source src="file:///storage/emulated/0/Advertising/video.mp4" type="video/mp4">  
-             <source src="file:///storage/emulated/0/Advertising/video2.mp4" type="video/mp4">   
-        </video>
--->
+
 
 
         <script type="text/javascript" src="cordova.js"></script>
@@ -40,7 +35,14 @@
             //document.addEventListener("offline", mensaje(1), false);
             //document.addEventListener("online", mensaje(2), false);
 
-           
+           function accionVideo(){
+				var vid = document.getElementById("vd"); 
+				vid.src="file:///storage/emulated/0/Advertising/video1.mp4";
+				//vid.src="http://192.168.1.143/video1.mp4";
+				vid.autoplay = true;
+				vid.load();
+				vid.play();
+		    }
 
 
             function mensaje(accion)
