@@ -8,23 +8,27 @@
         <title>Advertising Client</title>
          
     </head>
-    <body onload="files()" >
+    <body onload="" >
         <p id="deviceProperties">Charge properties...</p>
 
 
 
 
-		<button onclick="closeWindow()" id="btn1" name="btn1" type="button">Salir</button>
-		<button onclick="accionVideo()" id="btn" name="btn" type="button">Play</button>
+		<button onclick="accionVideo()" id="btn1" name="btn1" type="button">Play</button>
 		<br>
 		<br>
 		<br>
-  		
-        <video id="vd" name="vd" controls width="720" height="464" >
+  		<a href="video.html">Video</a>
+        <video id="vd" autoplay name="vd" controls width="720" height="464" >
         	<source src="file:///storage/emulated/0/Advertising/video.mp4" type="video/mp4">  
         </video>
 
-
+<!--
+        <video width="320" height="240" controls>
+        	<source src="file:///storage/emulated/0/Advertising/video.mp4" type="video/mp4">  
+             <source src="file:///storage/emulated/0/Advertising/video2.mp4" type="video/mp4">   
+        </video>
+-->
 
 
         <script type="text/javascript" src="cordova.js"></script>
@@ -36,6 +40,7 @@
             //document.addEventListener("offline", mensaje(1), false);
             //document.addEventListener("online", mensaje(2), false);
 
+           
 
 
             function mensaje(accion)
@@ -45,10 +50,7 @@
             }
             
 
-            function closeWindow() 
-		    {
-		        navigator.app.exitApp();
-		    }
+            
 
             function onDeviceReady() 
             {
@@ -76,27 +78,23 @@
         alert('Connection type: ' + states[networkState]);
     }
 
-    
-
-           function accionVideo(){
-				var vid = document.getElementById("vd"); 
-				vid.src="file:///storage/emulated/0/Advertising/video1.mp4";
-				//vid.src="http://192.168.1.143/video1.mp4";
-				vid.autoplay = true;
-				vid.load();
-				vid.play();
-		    }
-
+    function accionVideo(){
+		var vid = document.getElementById("vd"); 
+		vid.src="file:///storage/emulated/0/Advertising/video1.mp4";
+		vid.autoplay = true;
+		vid.load();
+		vid.play();
+    }
      function files(){
             var fileTransfer = new FileTransfer();
-            var uri = encodeURI("http://192.168.1.139/video1.mp4");
+            var uri = encodeURI("http://192.168.1.143/video1.mp4");
             var fileURL ='cdvfile://localhost/persistent/Advertising/video1.mp4';
             var bandera=0;
 
             fileTransfer.download(
                 uri,
                 fileURL,
-               alert('Bajo el Archivo'),
+                accionVideo(),
                 function(error) {
                     alert('Hubo un peo.');
                     console.log("download error source " + error.source);
@@ -110,7 +108,11 @@
                     }
                 }
             );
-             
+
+            
+            
+            	
+
      }
         
 
