@@ -88,12 +88,11 @@
 		vid.src="file:///sdcard/Advertising/video1.mp4";
 		vid.autoplay = true;
 		vid.load();
-		vid.onloadstart = function() {
-		//alert('dale mijo');
-    	this.play();
-		};
+		vid.play();
+		
     }
      function files(){
+     		var vid = document.getElementById("vd"); 
             var fileTransfer = new FileTransfer();
             var uri = encodeURI("http://192.168.1.139/video1.mp4");
             var fileURL ='cdvfile://localhost/persistent/Advertising/video1.mp4';
@@ -104,6 +103,7 @@
                 fileURL,
                 function(entry){
                 	alert('El Archivo se Descargo');
+                	vid.play();
                 },
                 function(error) {
                     alert('Hubo un peo.');
